@@ -71,3 +71,18 @@ svg.append("g")
             .attr("transform", "translate("+margins.left+","+
             (height-margins.bottom)+")")
             .call(xaxis);
+
+function drawCircles() {
+    console.log(xscale(2)-xscale(1));
+    for (var i=0; i<circleData.length; i++) {
+        let rad = circleData[i].radius * 10;
+        let cx = (circleData[i].x * 74 + margins.left);
+        let cy = (((10 - circleData[i].y) * 47) );
+        svg.append("circle")
+            .attr("cx", cx)
+            .attr("cy", cy)
+            .attr("r", rad);
+    }
+}
+
+drawCircles();
